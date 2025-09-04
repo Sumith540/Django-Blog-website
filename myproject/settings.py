@@ -77,11 +77,9 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 import dj_database_url
 
-
 DATABASES = {
-    "default": dj_database_url (
+    "default": dj_database_url.config(
         default=os.environ.get("DATABASE_URL", f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
-        
     )
 }
 
